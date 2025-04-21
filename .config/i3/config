@@ -2,6 +2,6 @@ set $mod Mod4
 
 font pango:monospace 8
 
-include keybinds.conf
 include startup.conf
+include keybinds.conf
 include status_bar.conf
