@@ -74,14 +74,20 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-(setq
- projectile-project-search-path '("~/godot/projects/"))
 
-(use-package! org-roam-ui
-  :after org-roam
-  :hook (org-roam-mode . org-roam-ui-mode)
-  :config
-  (setq org-roam-ui-sync-theme t
-        org-roam-ui-follow t
-        org-roam-ui-update-on-save t
-        org-roam-ui-open-on-start t))
+(map! :leader
+      :desc "Create new file"
+      :after dired
+      "=" #'dired-create-empty-file)
+
+(setq
+ projectile-project-search-path '("~/Documents/projects"))
+
+;; (use-package! org-roam-ui
+;;   :after org-roam
+;;   :hook (org-roam-mode . org-roam-ui-mode)
+;;   :config
+;;   (setq org-roam-ui-sync-theme t
+;;         org-roam-ui-follow t
+;;         org-roam-ui-update-on-save t
+;;         org-roam-ui-open-on-start t))
