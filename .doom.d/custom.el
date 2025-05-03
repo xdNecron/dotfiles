@@ -4,8 +4,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   '("/home/popos/Documents/projects/javascript-academy/notes/notes.org"))
- '(package-selected-packages '(ac-emmet emmet-mode))
+   '("~/Documents/projects/javascript-academy/notes/notes.org" "/home/popos/Documents/notes/tutorial.org" "/home/popos/Documents/notes/uni.org" "/home/popos/Documents/notes/journal.org" "/home/popos/Documents/notes/links.org"))
+ '(package-selected-packages '(sqlite3 ac-emmet emmet-mode))
  '(warning-suppress-types '((emacs) (emacs) (defvaralias) (lexical-binding))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
