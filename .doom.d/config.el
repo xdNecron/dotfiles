@@ -144,4 +144,15 @@ For more information see `emmet-mode'."
 ;;   (setq org-roam-ui-sync-theme t
 ;;         org-roam-ui-follow t
 ;;         org-roam-ui-update-on-save t
-;;         org-roam-ui-open-on-start t))
+;;         org-roam-ui-open-on-start
+
+(let ((node-bin
+       (string-replace "/node\n" ""
+                       (shell-command-to-string ". $HOME/.nvm/nvm.sh && nvm which current"))))
+  (add-to-list 'exec-path node-bin)
+  (setenv "PATH"
+        (concat node-bin ":" (getenv "PATH"))))
+
+(map! :leader
+      :desc "Call recorded macro"
+      "e" #'kmacro-call-macro)
