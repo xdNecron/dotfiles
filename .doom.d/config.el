@@ -156,3 +156,7 @@ For more information see `emmet-mode'."
 (map! :leader
       :desc "Call recorded macro"
       "e" #'kmacro-call-macro)
+
+(add-hook 'mmm-mode-hook
+          (lambda ()
+            (set-face-background 'mmm-default-submode-face nil)))
