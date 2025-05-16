@@ -75,6 +75,19 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+
+(use-package! org-roam
+  :ensure t
+  :custom
+  (org-roam-directory "~/Documents/notes/roam")
+  ;; :bind ((doom-leader-key "r l" . org-roam-buffer-toggle)
+  ;;        (doom-leader-key "r f" . org-roam-node-find)
+  ;;        (doom-leader-key "r i" . org-roam-node-insert))
+  )
+
 (map! :leader
       :desc "Create new file"
       :after dired
@@ -144,7 +157,7 @@ For more information see `emmet-mode'."
 ;;   (setq org-roam-ui-sync-theme t
 ;;         org-roam-ui-follow t
 ;;         org-roam-ui-update-on-save t
-;;         org-roam-ui-open-on-start
+;;         org-roam-ui-open-on-start))
 
 (let ((node-bin
        (string-replace "/node\n" ""

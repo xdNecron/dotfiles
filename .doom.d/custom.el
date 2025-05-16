@@ -5,7 +5,8 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
    '("~/Documents/projects/javascript-academy/notes/notes.org" "/home/popos/Documents/notes/tutorial.org" "/home/popos/Documents/notes/uni.org" "/home/popos/Documents/notes/journal.org" "/home/popos/Documents/notes/links.org"))
- '(package-selected-packages '(vue-mode sqlite3 ac-emmet emmet-mode))
+ '(package-selected-packages
+   '(sqlite3 gnu-elpa-keyring-update vue-mode ac-emmet emmet-mode))
  '(warning-suppress-types
    '((lsp-mode)
      (lsp-mode)
