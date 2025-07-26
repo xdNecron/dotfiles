@@ -173,3 +173,6 @@ For more information see `emmet-mode'."
 (add-hook 'mmm-mode-hook
           (lambda ()
             (set-face-background 'mmm-default-submode-face nil)))
+
+(setq case-fold-search nil)
+(setq evil-ex-search-case nil)
