@@ -176,3 +176,5 @@ For more information see `emmet-mode'."
 
 (setq case-fold-search nil)
 (setq evil-ex-search-case nil)
+
+(setq lsp-pylsp-plugins-pycodestyle-ignore [D100,D103])
