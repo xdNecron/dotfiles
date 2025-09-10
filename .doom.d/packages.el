@@ -7,6 +7,10 @@
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;; (package! some-package)
+(package! emacsql)
+(package! dash)
+(package! f)
+(package! s)
 
 ;; (package! sqlite3)
 

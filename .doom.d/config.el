@@ -75,77 +75,23 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
 
 (use-package! org-roam
-  :ensure t
-  :custom
-  (org-roam-directory "~/Documents/notes/roam")
-  ;; :bind ((doom-leader-key "r l" . org-roam-buffer-toggle)
-  ;;        (doom-leader-key "r f" . org-roam-node-find)
-  ;;        (doom-leader-key "r i" . org-roam-node-insert))
-  )
+  :ensure t)
+
+(setq org-roam-directory "~/Documents/notes")
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
 
 (map! :leader
       :desc "Create new file"
       :after dired
       "=" #'dired-create-empty-file)
 
-(defun custom-emmet-expr-on-line ()
-  "Extract a emmet expression and the corresponding bounds
-   for the current line."
-  (let* ((end (point))
-         (start (emmet-find-left-bound))
-         (line (buffer-substring-no-properties start (+ end 1)))
-         (expr (emmet-regex "\\([ \t]*\\)\\([^\n]+\\)" line 2)))
-    (if (cl-first expr)
-        (list (cl-first expr) start end))))
-
-(defun custom-emmet-expand-line (arg)
-  "Replace the current line's emmet expression with the corresponding expansion.
-If prefix ARG is given or region is visible call `emmet-preview' to start an
-interactive preview.
-
-Otherwise expand line directly.
-
-For more information see `emmet-mode'."
-  (interactive "P")
-  (let* ((here (point))
-         (preview (if emmet-preview-default (not arg) arg))
-         (beg (if preview
-                  (emmet-find-left-bound)
-                (when (use-region-p) (region-beginning))))
-         (end (if preview
-                  here
-                (when (use-region-p) (region-end)))))
-    (if (and preview beg)
-        (progn
-          (goto-char here)
-          (emmet-preview beg end))
-      (let ((expr (custom-emmet-expr-on-line)))
-        (if expr
-            (let ((markup (emmet-transform (cl-first expr))))
-              (when markup
-                (delete-region (cl-second expr) (+ (cl-third expr) 1))
-                (emmet-insert-and-flash markup)
-                (emmet-reposition-cursor expr))))))))
-
-(defun get-selection-marks ()
-  (interactive)
-  (evil-visual-line)
-  (custom-emmet-expand-line nil)
-  )
-
-(map! :leader
-      :desc ""
-      "j" #'get-selection-marks)
-
-(require 'emmet-mode)
-(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-(add-hook 'html-mode-hook 'emmet-mode)
-(add-hook 'css-mode-hook  'emmet-mode)
 
 (setq
  projectile-project-search-path '("~/Documents/projects"))
