@@ -33,6 +33,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-xcode)
+(setq doom-font (font-spec :family "Adwaita Mono" :size 70))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -240,7 +241,6 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
   (if (uni/course-directory-p path)
       ((lambda ()
          (let ((course-name (file-name-base (directory-file-name path))))
-           (message "YES YES YES, %s" course-name)
            (uni/generate-complete-notes
             path (format "%s-complete" course-name)))))
     (message "Not inside a course directory.")))
