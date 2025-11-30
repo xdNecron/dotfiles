@@ -19,7 +19,8 @@
  '(org-capture-after-finalize-hook '(+org-capture-cleanup-frame-h))
  '(org-directory "~/Documents/notes/")
  '(org-latex-packages-alist
-   '(("dvipsnames" "xcolor" nil nil) ("linewidth=1pt" "mdframed" nil nil)))
+   '(("dvipsnames" "xcolor" nil nil) ("linewidth=1pt" "mdframed" nil nil)
+     ("" "minted" nil nil)))
  '(package-selected-packages
    '(cl-libify emacsql f magit-section org-roam org-roam-ui sqlite3 typescript-mode
      undo-tree))

@@ -32,8 +32,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-xcode)
-(setq doom-font (font-spec :family "Adwaita Mono" :size 70))
+(setq doom-theme 'doom-miramare)
+(setq doom-font (font-spec :family "Adwaita Mono" :size 18))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -90,6 +90,11 @@
   :ensure t
   :custom
   (org-roam-directory (file-truename "~/Documents/notes/roam/")))
+
+(setq org-latex-packages-alist
+      '(("dvipsnames" "xcolor" nil nil)
+        ("linewidth=1pt" "mdframed" nil nil)
+        ("" "minted" nil nil)))
 
 (setq my/uni-path (file-truename (concat org-roam-directory "/uni")))
 
@@ -223,16 +228,10 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
     (when notes
       (f-write-text (format "\n#+title: %s\n" file-title) 'utf-8 file-path)
         (dolist (note notes)
-          (princ (format "file: %s\n" note))
-          (f-copy note (format "%s-tmp" note))
-          (let ((note-title (org-get-title note))
-                (temp-string (format "\n\n#+options: title:nil")))
-            (f-append (format "\n* %s\n#+include: \"%s-tmp\" :maxlevel 2" note-title note) 'utf-8 file-path)
-            (f-append temp-string #'utf-8 (format "%s-tmp" note))))
+          (let ((note-title (org-get-title note)))
+            (f-append (format "\n* %s\n#+include: \"%s\" :only-contents t :lines \"6-\"" note-title note) 'utf-8 file-path)))
         (find-file file-path)
-        (org-latex-export-to-pdf)
-        (dolist (note notes)
-          (f-delete (format "%s-tmp" note))))))
+        (org-latex-export-to-pdf))))
 
 (defun uni/get-course-notes (path)
   (interactive (list (or (when buffer-file-name
