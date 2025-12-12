@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-miramare)
+(setq doom-theme 'doom-rouge)
 (setq doom-font (font-spec :family "Adwaita Mono" :size 18))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
@@ -86,6 +86,9 @@
 
 (setq my/--last-created-node-title nil)
 
+(setq yas-snippet-dirs
+      '("~/.config/doom/snippets"))
+
 (use-package! org-roam
   :ensure t
   :custom
@@ -108,12 +111,6 @@
         org-roam-ui-follow t
         org-roam-ui-update-on-save t
         ))
-
-(map! :leader
-      :prefix ("r" . "roam")
-      :desc "Completion at point"
-      :nv
-      "c" #'completion-at-point)
 
 (use-package! org-roam-ui
   :after org-roam
@@ -208,7 +205,8 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
         ("u" "uni")
         ("un" "uni notes" plain
          "\n%?"
-         :target (file+head "uni/%(my/select-semester)/%(my/select-course)-%<%m%d>.org" "#+title: ${title}\n#+filetags: :uni:\n")
+         :target (file+head "uni/%(my/select-semester)/%(my/select-course)-%<%m%d>.org" "#+title: ${title}\n#+filetags: :uni:
+#+setupfile: ~/.dotfiles/.config/doom/setupfiles/latex-default-cs.org")
          :unnarrowed t)
         ("t" "term" plain
          "\n\n* ${title}\n\n%?"
@@ -226,10 +224,10 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
     (if (not file-title)
         (setq file-title file-name))
     (when notes
-      (f-write-text (format "\n#+title: %s\n" file-title) 'utf-8 file-path)
+      (f-write-text (format "#+title: %s\n#+setupfile: ~/.dotfiles/.config/doom/setupfiles/latex-default.org" file-title) 'utf-8 file-path)
         (dolist (note notes)
           (let ((note-title (org-get-title note)))
-            (f-append (format "\n* %s\n#+include: \"%s\" :only-contents t :lines \"6-\"" note-title note) 'utf-8 file-path)))
+            (f-append (format "\n* %s\n#+include: \"%s\" :only-contents t :lines \"7-\"" note-title note) 'utf-8 file-path)))
         (find-file file-path)
         (org-latex-export-to-pdf))))
 
@@ -305,14 +303,32 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
 (map! :map evil-org-mode-map
       :nv
       "g j" #'evil-next-visual-line)
+
 (map! :map evil-org-mode-map
       :nv
       "g k" #'evil-previous-visual-line)
+
+(map! :leader
+      :prefix ("r" . "roam")
+      :desc "Completion at point"
+      :nv
+      "c" #'completion-at-point)
+
 
 (map! :map evil-org-mode-map
       :leader
       :desc "Org agenda file to front"
       "z" #'org-agenda-file-to-front)
 
+(map! :leader
+      :prefix ("y". "yas")
+      :desc "Create new snippet"
+      :nv
+      "n" #'yas-new-snippet)
+
+(map! :n
+      "-" #'dired-jump)
+
 (after! org-agenda
   (my/org-roam-refresh-agenda-list))
+

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: LaTeX - SETUPFILE
+# uuid: 
+# key: lxsetup
+# condition: t
+# --
+
+#+setupfile: ~/.dotfiles/.config/doom/setupfiles/${1:latex-default.org}$0
