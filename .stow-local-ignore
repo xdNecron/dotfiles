@@ -1,0 +1,9 @@
+# --- Directories ---
+cosmic
+
+# --- Repository Dependencies ---
+run\.sh
+autopush\.sh
+\.git
+\.gitignore
+README.md
