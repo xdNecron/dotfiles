@@ -1,0 +1,9 @@
+[
+    Home,
+    Documents,
+    Downloads,
+    Music,
+    Pictures,
+    Videos,
+    Path("/home/adamdgaf/.steam/debian-installation/steamapps/common/Geometry Dash/"),
+]
