@@ -1,24 +1,20 @@
-# Dotfiles
+# My dotfiles
 
 ## Dependencies
 
 - git 
 - stow
 
-Install stow using your system package manager.
-
 ## Installation
 
-Clone the repository to your home folder. `cd` inside the cloned repo and run
+Clone the repository and `cd` into it. Run:
 
 ```bash
-stow .
+./apply.sh
 ```
 
-Stow will automatically symlink all files and directories inside the dotfile folder to its corresponding location in the home folder.
-Remember, the working tree inside the dotfile folder has to be the same as in your home folder. For example if you wish to add your Neovim
-configuration inside `~/.config/nvim`, it has to be stored on the path `.config/nvim` inside the dotfile folder.
+The script will automatically symlink all directories to `~/.config`.
 
 ## Ignoring files with stow
 
-Check the docs, bozo.
+You may add Perl regex patterns to `.stow-local-ignore` file. All files which match any pattern listed will be ignored by stow. Check the [official documentation](https://www.gnu.org/software/stow/manual/stow.html#Types-And-Syntax-Of-Ignore-Lists) for more information.
