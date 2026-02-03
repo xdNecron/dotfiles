@@ -6,10 +6,8 @@
  '(delete-by-moving-to-trash t)
  '(dirvish-quick-access-entries
    '(("h" "~/" "Home") ("d" "~/.dotfiles/" "Dotfiles")
-     ("a" "~/Documents/projects/aoc25" "AOC25")
-     ("z" "~/Documents/uni-work/podzim25/fi-zakprog" "IB111")
-     ("p" "~/Documents/projects" "Projects")
-     ("w" "~/Documents/uni-work/podzim25")))
+     ("pg" "~/Documents/projects/galaxian-in-terminal/" "Projects")
+     ("n" "~/Documents/notes/roam/uni/jaro26/" "Notes")))
  '(lsp-mode-hook
    '(lsp-completion-mode +lookup--init-lsp-mode-handlers-h lsp-ui-mode) t)
  '(lsp-pyls-plugins-flake8-ignore '("D100" "D103" "D102" "D101" "D107"))
