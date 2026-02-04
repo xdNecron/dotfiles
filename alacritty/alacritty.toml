@@ -5,3 +5,10 @@ decorations = "None"
 [font]
 normal = { family = "Noto Sans Mono", style = "Regular" }
 size = 12
+
+[keyboard]  # docs: ‹https://alacritty.org/config-alacritty.html#keyboard› 
+bindings = [
+    { key = "i",  mods = "Alt", action = "ToggleViMode" },
+    { key = "e", mods = "Alt", chars = "emacs -nw . \r"}, 
+    { key = "o", mode = "Vi", action = "Open" },
+]

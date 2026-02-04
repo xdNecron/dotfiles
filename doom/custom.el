@@ -43,7 +43,7 @@
      ("" "minted" nil nil) ("" "color" nil nil)))
  '(package-selected-packages
    '(cl-libify emacsql f magit-section org-roam org-roam-ui typescript-mode
-     undo-tree wakatime-mode))
+     undo-tree vue3-mode wakatime-mode))
  '(scroll-margin 8))
 ;; (custom-set-faces
 ;;  ;; custom-set-faces was added by Custom.
