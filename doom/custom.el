@@ -8,6 +8,7 @@
    '(("h" "~/" "Home") ("d" "~/.dotfiles/" "Dotfiles")
      ("pg" "~/Documents/projects/galaxian-in-terminal/" "Projects")
      ("n" "~/Documents/notes/roam/uni/jaro26/" "Notes")))
+ '(jabber-account-list '(("xeldunia@fi.muni.cz")))
  '(lsp-mode-hook
    '(lsp-completion-mode +lookup--init-lsp-mode-handlers-h lsp-ui-mode) t)
  '(lsp-pyls-plugins-flake8-ignore '("D100" "D103" "D102" "D101" "D107"))
@@ -42,7 +43,7 @@
    '(("dvipsnames" "xcolor" nil nil) ("linewidth=1pt" "mdframed" nil nil)
      ("" "minted" nil nil) ("" "color" nil nil)))
  '(package-selected-packages
-   '(cl-libify emacsql f magit-section org-roam org-roam-ui typescript-mode
+   '(cl-libify emacsql f jabber magit-section org-roam org-roam-ui typescript-mode
      undo-tree vue3-mode wakatime-mode))
  '(scroll-margin 8))
 ;; (custom-set-faces

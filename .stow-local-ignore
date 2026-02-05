@@ -1,9 +1,11 @@
 # --- Directories ---
 cosmic
+nvim
 
 # --- Repository Dependencies ---
 run\.sh
 autopush\.sh
 \.git
 \.gitignore
-README.md
+README\.md
+apply\.sh
