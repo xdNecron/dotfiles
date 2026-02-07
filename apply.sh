@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-stow --target=/home/$USER/.config -R .
+stow -R .

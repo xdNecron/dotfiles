@@ -5,6 +5,7 @@ nvim
 # --- Repository Dependencies ---
 run\.sh
 autopush\.sh
+apply.sh
 \.git
 \.gitignore
 README\.md

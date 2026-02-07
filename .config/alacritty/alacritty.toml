@@ -9,6 +9,7 @@ size = 12
 [keyboard]  # docs: ‹https://alacritty.org/config-alacritty.html#keyboard› 
 bindings = [
     { key = "i",  mods = "Alt", action = "ToggleViMode" },
-    { key = "e", mods = "Alt", chars = "emacs -nw . && clear\r"}, 
-    { key = "o", mode = "Vi", action = "Open" },
+    { key = "h", mods = "Alt", chars = "emacs -nw . \r && clear"}, 
+    { key = "e", mods = "Alt", chars = "emacs -nw ~/Documents \r && clear"}, 
+    { key = "o", mode = "Vi|~Search", action = "Open" },
 ]
