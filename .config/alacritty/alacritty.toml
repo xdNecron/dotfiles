@@ -1,6 +1,6 @@
 [window]
 padding = { x = 10, y = 10 }
-decorations = "None"
+# decorations = "None"
 
 [font]
 normal = { family = "Noto Sans Mono", style = "Regular" }
