@@ -43,9 +43,10 @@
    '(("dvipsnames" "xcolor" nil nil) ("linewidth=1pt" "mdframed" nil nil)
      ("" "minted" nil nil) ("" "color" nil nil)))
  '(package-selected-packages
-   '(cl-libify emacsql f jabber magit-section org-roam org-roam-ui typescript-mode
-     undo-tree vue3-mode wakatime-mode))
- '(scroll-margin 8))
+   '(cl-libify emacsql f jabber magit-section org-roam org-roam-ui svelte-mode
+     typescript-mode undo-tree vue3-mode wakatime-mode))
+ '(scroll-margin 8)
+ '(trash-directory "/home/adamdgaf/.local/share/Trash"))
 ;; (custom-set-faces
 ;;  ;; custom-set-faces was added by Custom.
 ;;  ;; If you edit it by hand, you could mess it up, so be careful.
