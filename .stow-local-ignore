@@ -1,6 +1,7 @@
 # --- Directories ---
 cosmic
 nvim
+\.(bashrc|profile)
 
 # --- Repository Dependencies ---
 run\.sh
