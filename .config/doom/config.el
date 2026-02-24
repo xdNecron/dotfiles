@@ -1,5 +1,6 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
@@ -33,7 +34,8 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-snazzy)
-;; (setq doom-font (font-spec :family "Adwaita Mono" :size 18))
+(setq doom-font (font-spec :size 18))
+
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -306,20 +308,22 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
       :desc "Open uni docs"
       "o c" #'my/open-docs)
 
-(map! :map evil-org-mode-map
-      :nv
-      "g j" #'evil-next-visual-line)
-
-(map! :map evil-org-mode-map
-      :nv
-      "g k" #'evil-previous-visual-line)
+(after! evil-org-mode
+  (map!
+   :mode evil-org-mode
+   :map evil-org-mode-map 
+    
+   :desc "Go to next visual line"
+   :nvme "g j" #'evil-next-visual-line
+    
+   :desc "Go to previous visual line"
+   :nvme "g k" #'evil-previous-visual-line))
 
 (map! :leader
       :prefix ("r" . "roam")
       :desc "Completion at point"
       :nv
       "c" #'completion-at-point)
-
 
 (map! :map evil-org-mode-map
       :leader
