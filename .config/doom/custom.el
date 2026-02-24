@@ -10,7 +10,7 @@
      ("n" "~/Documents/notes/roam/uni/jaro26/" "Notes")))
  '(jabber-account-list '(("xeldunia@fi.muni.cz")))
  '(lsp-mode-hook
-   '(lsp-completion-mode +lookup--init-lsp-mode-handlers-h lsp-ui-mode) t)
+   '(lsp-completion-mode +lookup--init-lsp-mode-handlers-h lsp-ui-mode))
  '(lsp-pyls-plugins-flake8-ignore '("D100" "D103" "D102" "D101" "D107"))
  '(nerd-icons-fonts-subdirectory "NerdFonts")
  '(org-agenda-files
@@ -43,9 +43,10 @@
    '(("dvipsnames" "xcolor" nil nil) ("linewidth=1pt" "mdframed" nil nil)
      ("" "minted" nil nil) ("" "color" nil nil)))
  '(package-selected-packages
-   '(cl-libify emacsql f jabber magit-section org-roam org-roam-ui svelte-mode
+   '(cl-libify emacsql f magit-section org-roam org-roam-ui svelte-mode
      typescript-mode undo-tree vue3-mode wakatime-mode))
  '(scroll-margin 8)
+ '(svelte-basic-offset 4)
  '(trash-directory "/home/adamdgaf/.local/share/Trash"))
 ;; (custom-set-faces
 ;;  ;; custom-set-faces was added by Custom.
