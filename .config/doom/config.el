@@ -275,36 +275,42 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
     (message "Not inside a course directory.")))
 
 
+(defun my/ssh-find-file ())
+
 ;; —————————————————
+;; 
 ;; KEYMAPS
+;;
+;;      Commented out keymaps do not apply on this machine.
+;;
+;;
+;; (map! :leader
+;;       :desc "Open org-roam-ui"
+;;       "n r u" #'org-roam-ui-open
+;;       :desc "Find node"
+;;       "r f" #'my/org-roam-node-find
+;;       :desc "Insert node"
+;;       "r i" #'org-roam-node-insert
+;;       :desc "Open org-roam directory"
+;;       "r d" #'my/dired-open-roam-dir
+;;       )
 
-(map! :leader
-      :desc "Open org-roam-ui"
-      "n r u" #'org-roam-ui-open
-      :desc "Find node"
-      "r f" #'my/org-roam-node-find
-      :desc "Insert node"
-      "r i" #'org-roam-node-insert
-      :desc "Open org-roam directory"
-      "r d" #'my/dired-open-roam-dir
-      )
+;; (map! :leader
+;;       :desc "Open uni notes"
+;;       "n u" #'my/dired-open-uni-notes)
 
-(map! :leader
-      :desc "Open uni notes"
-      "n u" #'my/dired-open-uni-notes)
-
-(map! :leader
-      :desc "Create empty file"
-      "=" #'dired-create-empty-file)
+;; (map! :leader
+;;       :desc "Create empty file"
+;;       "=" #'dired-create-empty-file)
 
 (map! :n
       "M" #'evil-set-marker)
 (map! :nv
       "m" #'evil-goto-mark)
 
-(map! :leader
-      :desc "Open uni docs"
-      "o c" #'my/open-docs)
+;; (map! :leader
+;;       :desc "Open uni docs"
+;;       "o c" #'my/open-docs)
 
 (map! :map evil-org-mode-map
       :nv
@@ -314,17 +320,17 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
       :nv
       "g k" #'evil-previous-visual-line)
 
-(map! :leader
-      :prefix ("r" . "roam")
-      :desc "Completion at point"
-      :nv
-      "c" #'completion-at-point)
+;; (map! :leader
+;;       :prefix ("r" . "roam")
+;;       :desc "Completion at point"
+;;       :nv
+;;       "c" #'completion-at-point)
 
 
-(map! :map evil-org-mode-map
-      :leader
-      :desc "Org agenda file to front"
-      "z" #'org-agenda-file-to-front)
+;; (map! :map evil-org-mode-map
+;;       :leader
+;;       :desc "Org agenda file to front"
+;;       "z" #'org-agenda-file-to-front)
 
 (map! :leader
       :prefix ("y". "yas")
@@ -340,5 +346,5 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
       :desc "Open man-page"
       "h m" #'man)
 
-(after! org-agenda
-  (my/org-roam-refresh-agenda-list))
+;; (after! org-agenda
+;;   (my/org-roam-refresh-agenda-list))

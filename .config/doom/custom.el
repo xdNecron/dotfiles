@@ -8,7 +8,6 @@
    '(("h" "~/" "Home") ("d" "~/.dotfiles/" "Dotfiles")
      ("pg" "~/Documents/projects/galaxian-in-terminal/" "Projects")
      ("n" "~/Documents/notes/roam/uni/jaro26/" "Notes")))
- '(jabber-account-list '(("xeldunia@fi.muni.cz")))
  '(lsp-mode-hook
    '(lsp-completion-mode +lookup--init-lsp-mode-handlers-h lsp-ui-mode) t)
  '(lsp-pyls-plugins-flake8-ignore '("D100" "D103" "D102" "D101" "D107"))
@@ -46,7 +45,7 @@
    '(cl-libify emacsql f jabber magit-section org-roam org-roam-ui svelte-mode
      typescript-mode undo-tree vue3-mode wakatime-mode))
  '(scroll-margin 8)
- '(trash-directory "/home/adamdgaf/.local/share/Trash"))
+ '(trash-directory "/home/xeldunia/.local/share/Trash"))
 ;; (custom-set-faces
 ;;  ;; custom-set-faces was added by Custom.
 ;;  ;; If you edit it by hand, you could mess it up, so be careful.
