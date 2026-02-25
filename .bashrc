@@ -136,3 +136,7 @@ PERL5LIB="/home/adamdgaf/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5
 PERL_LOCAL_LIB_ROOT="/home/adamdgaf/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/adamdgaf/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/adamdgaf/perl5"; export PERL_MM_OPT;
+
+# aliases for PB111
+alias pb111-sync='sshfs -o auto_unmount aisa:/home/xeldunia/pb111 ~/Documents/uni-work/jaro26/pb111-mount'
+alias pb111-umount='fusermount -u ~/Documents/uni-work/jaro26/pb111-mount/'
