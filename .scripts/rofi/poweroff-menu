@@ -1,0 +1,16 @@
+#!/bin/bash
+
+OPTIONS=("poweroff" "reboot" "lock" "logout")
+
+SELECTED=$(echo ${OPTIONS[@]} | rofi -sep ' ' -dmenu -p "option")
+[[ -z "$SELECTED" ]] && exit
+
+if [ "$SELECTED" = "poweroff" ]; then
+    systemctl poweroff
+elif [ "$SELECTED" = "reboot" ]; then
+    reboot
+elif [ "$SELECTED" = "logout" ]; then
+	loginctl kill-user $USER
+elif [ "$SELECTED" = "lock" ]; then
+    i3lock
+fi
