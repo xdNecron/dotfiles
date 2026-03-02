@@ -140,3 +140,7 @@ PERL_MM_OPT="INSTALL_BASE=/home/adamdgaf/perl5"; export PERL_MM_OPT;
 # aliases for PB111
 alias pb111-sync='sshfs -o auto_unmount aisa:/home/xeldunia/pb111 ~/Documents/uni-work/jaro26/pb111-mount'
 alias pb111-umount='fusermount -u ~/Documents/uni-work/jaro26/pb111-mount/'
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
