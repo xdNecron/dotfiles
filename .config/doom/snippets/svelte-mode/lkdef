@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: lave-koleno: default script 
+# key: lkdef
+# --
+
+<script lang="ts">
+    let { otherProps="" } = $props();
+</script>$0

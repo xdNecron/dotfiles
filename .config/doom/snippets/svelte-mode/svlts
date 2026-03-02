@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Svelte <script> TS
+# key: svlts
+# --
+
+<script lang="ts">
+    $0
+</script>
