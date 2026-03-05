@@ -1,13 +1,17 @@
-#!/bin/sh
-LID_STATE=$(cat /proc/acpi/button/lid/LID/state | grep -Eo "open|closed")
+#!/bin/bash
+
+dbg=/home/adamdgaf/lid
+
+uname=$(who | grep -Po "^.+(?= :0)")
 
 export DISPLAY=:0
+export XAUTHORITY="/home/$uname/.Xauthority"
 
-echo "$(xrandr 2>1)" > /home/adamdgaf/liddbg
+second_display=$(xrandr 2>>$dbg | grep -Po "(?>[^eDP\-1]).*(?= connected)" | head -n 1)
 
-if [ "$LID_STATE" = "closed" ]; then
-	xrandr --output 'eDP-1' --off 2>/home/adamdgaf/liddbg
+if grep -q open /proc/acpi/button/lid/LID/state; then echo "OPEN" >> $dbg
+    xrandr --output $second_display --primary --auto
+	xrandr --output 'eDP-1' --right-of $second_display --auto
 else
-	echo "OPEN" > /home/adamdgaf/lid
-	xrandr --output 'eDP-1' --right-of 'HDMI-2' --auto --noprimary 2>/home/adamdgaf/liddbg
+	xrandr --output 'eDP-1' --off 
 fi

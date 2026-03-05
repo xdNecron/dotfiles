@@ -1,0 +1,14 @@
+#!/bin/bash
+
+second_display=$(xrandr | grep -Po "(?>[^eDP\-1]).*(?= connected)" | head -n 1)
+
+if [ -z "$second_display" ]; then exit 0; fi
+
+export DISPLAY=:0
+export XAUTHORITY=$HOME/.Xauthority
+
+if grep -q open /proc/acpi/button/lid/LID/state; then
+    xrandr --output "$second_display" --primary --right-of eDP-1
+else
+    xrandr --output eDP-1 --off
+fi

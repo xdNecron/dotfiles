@@ -12,6 +12,9 @@
  '(lsp-mode-hook
    '(lsp-completion-mode +lookup--init-lsp-mode-handlers-h lsp-ui-mode))
  '(lsp-pyls-plugins-flake8-ignore '("D100" "D103" "D102" "D101" "D107"))
+ '(lsp-pylsp-plugins-flake8-ignore ["F405"])
+ '(lsp-pylsp-plugins-pycodestyle-ignore ["F405"])
+ '(lsp-pylsp-plugins-ruff-ignore ["F405"])
  '(nerd-icons-fonts-subdirectory "NerdFonts")
  '(org-agenda-files
    '("~/Documents/notes/roam/uni/podzim25/fss-bezstrat/fss-bezstrat-todo.org"

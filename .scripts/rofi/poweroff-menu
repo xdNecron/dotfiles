@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OPTIONS=("poweroff" "reboot" "lock" "logout")
+OPTIONS=("poweroff" "reboot" "lock" "logout" "suspend")
 
 SELECTED=$(echo ${OPTIONS[@]} | rofi -sep ' ' -dmenu -p "option")
 [[ -z "$SELECTED" ]] && exit
@@ -9,8 +9,10 @@ if [ "$SELECTED" = "poweroff" ]; then
     systemctl poweroff
 elif [ "$SELECTED" = "reboot" ]; then
     reboot
+elif [ "$SELECTED" = "suspend"]; then
+    systemctl suspend 2>/home/adamdgaf/dbg
 elif [ "$SELECTED" = "logout" ]; then
-	loginctl kill-user $USER
+    loginctl kill-user $USER
 elif [ "$SELECTED" = "lock" ]; then
     i3lock
 fi
