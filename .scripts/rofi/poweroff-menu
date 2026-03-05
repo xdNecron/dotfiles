@@ -12,5 +12,5 @@ elif [ "$SELECTED" = "reboot" ]; then
 elif [ "$SELECTED" = "logout" ]; then
 	loginctl kill-user $USER
 elif [ "$SELECTED" = "lock" ]; then
-    i3lock
+	i3lock
 fi

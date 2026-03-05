@@ -299,9 +299,9 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
 ;;       :desc "Open uni notes"
 ;;       "n u" #'my/dired-open-uni-notes)
 
-;; (map! :leader
-;;       :desc "Create empty file"
-;;       "=" #'dired-create-empty-file)
+(map! :leader
+      :desc "Create empty file"
+      "=" #'dired-create-empty-file)
 
 (map! :n
       "M" #'evil-set-marker)
