@@ -28,3 +28,8 @@ fi
 
 export PATH=$PATH:/usr/local/texlive/2025/bin/x86_64-linux
 . "$HOME/.cargo/env"
+
+if [ ! -f "$HOME/.Xauthority" ]; then touch "$HOME/.Xauthority"; fi
+xauth -f "$HOME/.Xauthority" generate :0 . trusted
+
+export SSH_ASKPASS_REQUIRE="never"
