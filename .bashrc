@@ -126,3 +126,12 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/adamdgaf/.local/bin:/usr/local/texlive/2025/bin/x86_64-linux:/home/adamdgaf/.cargo/bin:/home/adamdgaf/.cargo/bin
 
 eval `ssh-agent`
+
+. ~/.scripts/utils/git-prompt.sh
+
+export GIT_PS1_SHOWCOLORHINTS="yes"
+prompt-command () {
+	export PS1="\[\e[0;32m\]\u\[\e[m\]:\[\e[0;34m\]\w\[\e[m\]\[$(__git_ps1 " (%s)")\]\$ "
+}
+
+export PROMPT_COMMAND=prompt-command
