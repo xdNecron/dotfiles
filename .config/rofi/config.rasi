@@ -1,0 +1,8 @@
+configuration {
+              show: "drun";
+              icon-theme: "Papirus";
+              show-icons: true; 
+              font: "mono 16";
+}
+//@theme "solarized"
+@theme "/usr/share/rofi/themes/DarkBlue.rasi"

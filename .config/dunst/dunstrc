@@ -1,0 +1,21 @@
+# Requirements: dunst, libnotify-{bin,dev,doc}, papirus-icon-theme
+ 
+[global]
+enable_posix_regex = true
+
+width = 300
+height = 260
+
+offset = 10x10
+scale = 1.2
+
+font = "Monospace 12"
+
+format = <b>%a</b>\n%b\n%p
+
+icon_theme = "Papirus"
+enable_recursive_icon_lookup = true
+
+[Thunderbird]
+appname = "thunderbird"
+font = "Monospace 10"
