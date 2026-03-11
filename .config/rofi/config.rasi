@@ -1,0 +1,6 @@
+configuration {
+	show-icons: true;
+	icon-theme: "Papirus";
+	/* font: "mono 16"; */
+}
+@theme "/usr/share/rofi/themes/DarkBlue.rasi"

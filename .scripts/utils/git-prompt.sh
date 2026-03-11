@@ -650,11 +650,11 @@ __git_ps1 ()
 		b="\${__git_ps1_branch_name}"
 	fi
 
+	b="⎇ $b"
 	if [ -n "${GIT_PS1_SHOWCOLORHINTS-}" ]; then
 		__git_ps1_colorize_gitstring
 	fi
 
-	b="⎇ $b"
 	local f="$h$w$i$s$u$p"
 	local gitstring="$c$b${f:+$z$f}${sparse}$r${upstream}${conflict}"
 
