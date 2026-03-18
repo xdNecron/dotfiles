@@ -1,9 +1,16 @@
 #!/bin/bash
 
+_set_bg () {
+	feh --no-fehbg --bg-fill $(cat ~/.bgimage)
+}
+
 second_display=$(xrandr | grep -Po "(?>[^eDP\-1]).*(?= connected)" | head -n 1)
 echo "$second_display"
 
-if [ -z "$second_display" ]; then exit 0; fi
+if [ -z "$second_display" ]; then 
+	_set_bg
+	return
+fi
 
 export DISPLAY=:0
 export XAUTHORITY=$HOME/.Xauthority
@@ -14,3 +21,5 @@ if grep -q open /proc/acpi/button/lid/LID/state; then
 else
     xrandr --output eDP-1 --off
 fi
+
+_set_bg
