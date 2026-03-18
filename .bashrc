@@ -133,7 +133,3 @@ prompt-command () {
 }
 
 export PROMPT_COMMAND=prompt-command
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
-
-alias pioneer='marp --engine ~/Documents/projects/marp-engine/src/pioneer-engine.cjs'
