@@ -2,5 +2,7 @@ configuration {
 	show-icons: true;
 	icon-theme: "Papirus";
 	/* font: "mono 16"; */
+	terminal: "alacritty";
 }
+ 
 @theme "/usr/share/rofi/themes/DarkBlue.rasi"
