@@ -4,7 +4,7 @@ padding = { x = 10, y = 10 }
 
 [font]
 normal = { family = "Noto Sans Mono", style = "Regular" }
-size = 12
+size = 9
 
 [keyboard]  # docs: https://alacritty.org/config-alacritty.html#keyboard
 bindings = [
