@@ -33,9 +33,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-snazzy)
-(setq doom-font (font-spec :size 18))
-
+(setq doom-theme 'modus-vivendi-tinted)
+;; (setq doom-font (font-spec :size 18 :family "Monospace"))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -193,6 +192,11 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
     (let ((selection (completing-read "Select course: " course-list nil t)))
       (concat selection "/" selection))))
 
+(defun my/select-course2 ()
+  "Prompts user for course name."
+  (interactive)
+  (read-string "Course name: "))
+
 (defun my/open-docs ()
   (interactive)
   (let ((docs-path (concat org-roam-directory "/docs")))
@@ -213,7 +217,7 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
         ("u" "uni")
         ("un" "uni notes" plain
          "\n%?"
-         :target (file+head "uni/%(my/select-semester)/%(my/select-course)-%<%m%d>.org" "#+title: ${title}\n#+filetags: :uni:
+         :target (file+head "uni/%(my/select-semester)/%(my/select-course2).org" "#+title: ${title}\n#+filetags: :uni:
 #+setupfile: ~/.dotfiles/.config/doom/setupfiles/latex-default-cs.org")
          :unnarrowed t)
         ("t" "term" plain
