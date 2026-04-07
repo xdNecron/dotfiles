@@ -6,11 +6,11 @@
  '(delete-by-moving-to-trash t)
  '(dirvish-quick-access-entries
    '(("h" "~/" "Home") ("d" "~/.dotfiles/" "Dotfiles")
-     ("pg" "~/Documents/projects/galaxian-in-terminal/" "Projects")
-     ("n" "~/Documents/notes/roam/uni/jaro26/" "Notes")))
+     ("n" "~/Documents/notes/roam/uni/jaro26/" "Notes")
+     ("w" "~/Documents/uni-work/jaro26/" "Uni Work")))
  '(jabber-account-list '(("xeldunia@fi.muni.cz")))
  '(lsp-mode-hook
-   '(lsp-completion-mode +lookup--init-lsp-mode-handlers-h lsp-ui-mode))
+   '(lsp-completion-mode +lookup--init-lsp-mode-handlers-h lsp-ui-mode) t)
  '(lsp-pyls-plugins-flake8-ignore '("D100" "D103" "D102" "D101" "D107"))
  '(lsp-pylsp-plugins-flake8-ignore ["F405"])
  '(lsp-pylsp-plugins-pycodestyle-ignore ["F405"])
@@ -45,9 +45,13 @@
  '(org-latex-packages-alist
    '(("dvipsnames" "xcolor" nil nil) ("linewidth=1pt" "mdframed" nil nil)
      ("" "minted" nil nil) ("" "color" nil nil)))
+ '(org-latex-pdf-process
+   '("latexmk -f -pdf -pdflatex=$HOME/.dotfiles/.config/doom/custom-pdflatex.sh -%latex -interaction=nonstopmode -output-directory=%o %f"))
+ '(org-safe-remote-resources
+   '("\\`https://upload\\.wikimedia\\.org/wikipedia/commons/8/8d/OSI_Model_v1\\.svg\\'"))
  '(package-selected-packages
    '(cl-libify emacsql f magit-section org-roam org-roam-ui svelte-mode
-     typescript-mode undo-tree vue3-mode wakatime-mode))
+     typescript-mode undo-tree vue3-mode wakatime-mode zig-mode))
  '(scroll-margin 8)
  '(svelte-basic-offset 4)
  '(trash-directory "/home/adamdgaf/.local/share/Trash"))
