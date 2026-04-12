@@ -14,5 +14,5 @@ elif [ "$SELECTED" = "suspend" ]; then
 elif [ "$SELECTED" = "logout" ]; then
     loginctl kill-user $USER
 elif [ "$SELECTED" = "lock" ]; then
-	betterlockscreen -l blur
+    loginctl lock-session
 fi
