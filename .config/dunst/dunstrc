@@ -2,12 +2,12 @@
 [global]
 enable_posix_regex = true
 
-width = 300
-height = 260
+width = (300, 500)
+height = 300
 offset = 10x10
-font = "Monospace 10"
+font = "Noto Sans Mono 10"
 
-format = <b>%a</b>\n%b\n%p
+format = <b>%a</b>\n%s\n
 
 icon_theme = "Papirus"
 enable_recursive_icon_lookup = true
