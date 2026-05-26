@@ -1,0 +1,6 @@
+% Math Letters Shortucts
+#+latex_header: \newcommand{\inF}{\mathcal{F}}
+#+latex_header: \newcommand{\bigo}{\mathcal{O}}
+
+% Math Operations
+#+latex_header: \newcommand{\mod}{\mbox{ mod }}
