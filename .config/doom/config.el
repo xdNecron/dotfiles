@@ -1,5 +1,6 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
@@ -32,8 +33,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-snazzy)
-(setq doom-font (font-spec :family "Noto Sans Mono" :size 21))
+(setq doom-theme 'doom-outrun-electric)
+(setq doom-font (font-spec :size 18 :family "Noto Sans Mono"))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -191,6 +192,11 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
     (let ((selection (completing-read "Select course: " course-list nil t)))
       (concat selection "/" selection))))
 
+(defun my/select-course2 ()
+  "Prompts user for course name."
+  (interactive)
+  (read-string "Course name: "))
+
 (defun my/open-docs ()
   (interactive)
   (let ((docs-path (concat org-roam-directory "/docs")))
@@ -211,7 +217,7 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
         ("u" "uni")
         ("un" "uni notes" plain
          "\n%?"
-         :target (file+head "uni/%(my/select-semester)/%(my/select-course)-%<%m%d>.org" "#+title: ${title}\n#+filetags: :uni:
+         :target (file+head "uni/%(my/select-semester)/%(my/select-course2).org" "#+title: ${title}\n#+filetags: :uni:
 #+setupfile: ~/.dotfiles/.config/doom/setupfiles/latex-default-cs.org")
          :unnarrowed t)
         ("t" "term" plain
@@ -312,13 +318,16 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
 ;;       :desc "Open uni docs"
 ;;       "o c" #'my/open-docs)
 
-(map! :map evil-org-mode-map
-      :nv
-      "g j" #'evil-next-visual-line)
-
-(map! :map evil-org-mode-map
-      :nv
-      "g k" #'evil-previous-visual-line)
+(after! evil-org-mode
+  (map!
+   :mode evil-org-mode
+   :map evil-org-mode-map 
+    
+   :desc "Go to next visual line"
+   :nvme "g j" #'evil-next-visual-line
+    
+   :desc "Go to previous visual line"
+   :nvme "g k" #'evil-previous-visual-line))
 
 ;; (map! :leader
 ;;       :prefix ("r" . "roam")
@@ -326,11 +335,18 @@ Return format is \'<course-name>/<course-name>\' for org-capture template compat
 ;;       :nv
 ;;       "c" #'completion-at-point)
 
+<<<<<<< HEAD
 
 ;; (map! :map evil-org-mode-map
 ;;       :leader
 ;;       :desc "Org agenda file to front"
 ;;       "z" #'org-agenda-file-to-front)
+=======
+(map! :map evil-org-mode-map
+      :leader
+      :desc "Org agenda file to front"
+      "z" #'org-agenda-file-to-front)
+>>>>>>> 51d35873132e5313c84e2fdc2986306cd2e85e04
 
 (map! :leader
       :prefix ("y". "yas")

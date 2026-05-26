@@ -50,3 +50,6 @@
 
 (package! yasnippet)
 (package! org-roam-ui)
+
+(package! zig-mode)
+(package! svelte-mode)

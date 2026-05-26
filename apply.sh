@@ -1,3 +1,10 @@
 #!/usr/bin/env sh
 
 stow -R .
+
+# -- Apply symlinks from .scripts/utils -> .local/bin -- 
+# automatically
+stow -R --target=$HOME/.local/bin/ --dir=$HOME/.dotfiles/.scripts/utils/ . --ignore=sshfs-pb111.sh
+
+# renamed
+ln -s $HOME/.scripts/utils/sshfs-pb111.sh $HOME/.local/bin/pb111

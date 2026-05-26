@@ -1,0 +1,11 @@
+#+LATEX_HEADER: \usepackage{xcolor}
+
+% Colors
+#+LATEX_HEADER: \colorlet{EmphCol}{BrickRed}
+
+% Underline
+#+LATEX_HEADER: \renewcommand{\uline}[1]{\textcolor{EmphCol}{#1}}
+
+% Code
+#+LATEX_HEADER: \let\oldtextt\texttt
+#+LATEX_HEADER: \renewcommand{\texttt}[1]{\textcolor{PineGreen}{\oldtextt{#1}}}

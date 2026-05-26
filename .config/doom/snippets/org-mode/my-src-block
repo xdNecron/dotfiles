@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: my src block
+# key: msrc
+# --
+
+#+begin_src ${1:python} :session ${2:sesh} :exports ${3:code}
+$0
+#+end_src
