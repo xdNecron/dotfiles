@@ -132,6 +132,8 @@ prompt-command () {
 	export PS1="\[\e[1;32m\]\u\[\e[m\]:\[\e[1;34m\]\w\[\e[m\]\[$(__git_ps1 " %s")\]\$ "
 }
 
+export PROMPT_COMMAND=prompt-command
+
 alias pioneer=marp --engine=/home/adamdgaf/Documents/projects/marp-enine/src/pioneer-engine.cjs
 alias pdflatex="pdflatex -shell-escape"
 

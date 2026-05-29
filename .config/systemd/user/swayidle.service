@@ -1,0 +1,12 @@
+[Unit]
+Description=Sway Idle
+Documentation=man:swayidle(1)
+BindsTo=sway-session.target
+After=sway-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/swayidle -w timeout 240 "swaylock -f" timeout 600 'swaymsg output "*" poweroff' resume 'swaymsg output "*" poweron' before-sleep 'swaylock -f'
+
+[Install]
+WantedBy=sway-session.target
