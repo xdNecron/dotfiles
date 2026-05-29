@@ -1,6 +1,23 @@
 configuration {
 	show-icons: true;
 	icon-theme: "Papirus";
-	/* font: "mono 16"; */
+	font: "NotoSansMono 12";
 }
+
 @theme "/usr/share/rofi/themes/DarkBlue.rasi"
+
+inputbar {
+        padding: 5 10;
+}
+
+prompt {
+       font: "NotoSansMono 14";
+}
+
+element {
+        padding: 5 10;
+}
+
+element-icon {
+        padding: 0 5 0 0;
+}

@@ -116,25 +116,19 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=$PATH:/home/adamdgaf/.local/bin
-export PATH=$PATH:/usr/local/texlive/2025/bin/x86_64-linux
-. "$HOME/.cargo/env"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/adamdgaf/.local/bin:/usr/local/texlive/2025/bin/x86_64-linux:/home/adamdgaf/.cargo/bin:/home/adamdgaf/.cargo/bin
 
 . ~/.scripts/utils/git-prompt.sh
 
 export GIT_PS1_SHOWCOLORHINTS="1"
+
 prompt-command () {
-	export PS1="\[\e[1;32m\]\u\[\e[m\]:\[\e[1;34m\]\w\[\e[m\]\[$(__git_ps1 " %s")\]\$ "
+	export PS1="\[\e[1;32m\]\u@\h\[\e[m\]:\[\e[1;34m\]\w\[\e[m\]\[$(__git_ps1 " %s")\]\$ "
 }
 
 export PROMPT_COMMAND=prompt-command
 
 alias pioneer=marp --engine=/home/adamdgaf/Documents/projects/marp-enine/src/pioneer-engine.cjs
 alias pdflatex="pdflatex -shell-escape"
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
