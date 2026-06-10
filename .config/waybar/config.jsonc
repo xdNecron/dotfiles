@@ -1,0 +1,10 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 25,
+
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "battery", "pulseaudio",
+        "keyboard-state", "tray"],
+}

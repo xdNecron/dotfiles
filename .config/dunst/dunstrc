@@ -7,10 +7,18 @@ height = 300
 offset = 10x10
 font = "Noto Sans Mono 10"
 
-format = <b>%a</b>\n%s\n
+format = <b>%s</b>\n%b
 
 icon_theme = "Papirus"
 enable_recursive_icon_lookup = true
 
+background = "#100f24"
+frame_color = "#8c87ed"
+corner_radius = 10
+frame_width = 2
+
 [Thunderbird]
 appname = "thunderbird"
+
+[blueman]
+format = <b>%a: %s</b>\n%b\n

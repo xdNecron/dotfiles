@@ -75,8 +75,8 @@
  '(org-safe-remote-resources
    '("\\`https://upload\\.wikimedia\\.org/wikipedia/commons/8/8d/OSI_Model_v1\\.svg\\'"))
  '(package-selected-packages
-   '(cl-libify emacsql f magit-section org-roam org-roam-ui typescript-mode
-     undo-tree vue3-mode wakatime-mode))
+   '(cl-libify emacsql f magit-section org-roam org-roam-ui pdf-tools
+     typescript-mode undo-tree vue3-mode wakatime-mode))
  '(scroll-margin 8)
  '(svelte-basic-offset 4)
  '(trash-directory "/home/adamdgaf/.local/share/Trash"))

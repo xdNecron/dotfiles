@@ -1,0 +1,28 @@
+* {
+  font-family: NotoSansMono, monospace;
+  font-size: 13px;
+}
+
+window#waybar {
+  background-color: #100f24;
+  color: #cdd6f4;
+}
+
+#clock, #battery, #network, #cpu, #memory {
+  padding: 0 10px;
+}
+
+#workspaces button {
+  padding: 5px;
+  color: #cdd6f4;
+  border-radius: 0px;
+}
+
+#workspaces button.focused {
+  background-color: #89b4fa;
+  color: #100f24;
+}
+
+#tray {
+    padding-left: 10px;
+}

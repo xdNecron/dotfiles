@@ -130,5 +130,6 @@ prompt-command () {
 
 export PROMPT_COMMAND=prompt-command
 
-alias pioneer=marp --engine=/home/adamdgaf/Documents/projects/marp-enine/src/pioneer-engine.cjs
+# alias pioneer=marp --engine=/home/adamdgaf/Documents/projects/marp-enine/src/pioneer-engine.cjs
+alias fusermount="fusermount3"
 alias pdflatex="pdflatex -shell-escape"
